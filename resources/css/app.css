@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* LOGIN SCENE */
+
+.login-scene {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            #07151a,
+            #10272a,
+            #1c3026
+        );
+
+    transition: 1s ease;
+}
+
+
+/* LIGHT EFFECT */
+
+.lamp-light {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+
+    background: rgba(255, 220, 70, 0.15);
+
+    filter: blur(30px);
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.lamp-light.on {
+    opacity: 1;
+    transform: scale(1.5);
+
+    background: rgba(255, 220, 70, 0.45);
+
+    box-shadow:
+        0 0 80px rgba(255, 220, 70, 0.5),
+        0 0 150px rgba(255, 220, 70, 0.3);
+}
+
+
+/* LAMP */
+
+.lamp-area {
+    position: relative;
+    width: 180px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+}
+
+.lamp-button {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #555;
+
+    cursor: pointer;
+
+    transition:
+        0.4s ease;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.1);
+}
+
+.lamp-button span {
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: #777;
+
+    top: 24px;
+    left: 24px;
+
+    transition: 0.5s ease;
+}
+
+.lamp-button:hover {
+    transform: scale(1.05);
+}
+
+.lamp-on .lamp-button {
+    background: #ffd928;
+
+    box-shadow:
+        0 0 25px #ffd928,
+        0 0 60px rgba(255, 217, 40, 0.7);
+}
+
+.lamp-on .lamp-button span {
+    background: #fff7a8;
+
+    box-shadow:
+        0 0 20px #fff,
+        0 0 40px #ffd928;
+}
+
+
+/* LAMP STICK */
+
+.lamp-stick {
+    width: 8px;
+    height: 90px;
+
+    background: #888;
+
+    border-radius: 10px;
+
+    margin-top: 5px;
+
+    transition: 0.5s ease;
+}
+
+.lamp-on .lamp-stick {
+    background: #ddd;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.5);
+}
+
+.lamp-area p {
+    margin-top: 20px;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    transition: 0.5s ease;
+}
+
+.lamp-on .lamp-area p {
+    color: #fff;
+}
+
+
+/* LOGIN FORM */
+
+.login-form {
+    width: 350px;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4);
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    transform:
+        translateX(-40px)
+        scale(0.95);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.login-form.visible {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        scale(1);
+
+    pointer-events: auto;
+}
+
+.login-form h2 {
+    color: white;
+
+    text-align: center;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    margin-bottom: 30px;
+}
+
+
+/* INPUTS */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+
+    color: white;
+
+    margin-bottom: 6px;
+}
+
+.login-input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: rgba(0,0,0,0.35);
+
+    color: white;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+.login-input:focus {
+    background: rgba(0,0,0,0.5);
+
+    box-shadow:
+        0 0 0 2px #ffd928;
+}
+
+
+/* REMEMBER */
+
+.remember-area {
+    margin: 15px 0;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.remember-area input {
+    margin-right: 6px;
+}
+
+
+/* LOGIN BUTTON */
+
+.login-button {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #ffd928;
+
+    color: #111;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.login-button:hover {
+    background: #ffe766;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 20px rgba(255,217,40,0.4);
+}
+
+
+/* LINKS */
+
+.login-link {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    color: #ffd928;
+
+    font-size: 14px;
+
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .login-scene {
+        flex-direction: column;
+
+        gap: 30px;
+
+        padding: 30px 20px;
+    }
+
+    .lamp-area {
+        height: 180px;
+    }
+
+    .login-form {
+        width: 100%;
+        max-width: 350px;
+    }
+}
